@@ -1,19 +1,19 @@
 package com.asustug.unittesting.utils
 
-import junit.framework.TestCase.assertEquals
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import org.junit.runners.Parameterized.Parameters
 
 @RunWith(value = Parameterized::class)
-class ParameterizedTest(private val input: String, private val expected: Boolean) {
+class ParameterizedExample(private val input: String, private val expected: Boolean) {
 
     @Test
     fun test() {
         val helper = Helper()
-        helper.isPalindrome(input)
-        assertEquals(expected, input)
+        val result = helper.isPalindrome(input)
+        assertEquals(expected, result)
     }
 
     companion object {
@@ -22,7 +22,8 @@ class ParameterizedTest(private val input: String, private val expected: Boolean
         fun data(): List<Array<Any>> {
             return listOf(
                 arrayOf("madam",true),
-                arrayOf("level",true)
+                arrayOf("test",false),
+                arrayOf("madam",true)
             )
         }
     }
